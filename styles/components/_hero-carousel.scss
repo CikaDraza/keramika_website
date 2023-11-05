@@ -1,0 +1,99 @@
+.slider {
+  display: flex;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-width: calc(1280/2);
+  width: 100%;
+  position: relative;
+
+  &__wrapper {
+    position: absolute;
+    overflow: hidden;
+    margin-left: 50px;
+    @include mobile {
+      position: relative;
+      margin-left: 0;
+      width: 300px;
+      height: 215px;
+    }
+ }
+
+  &__items {
+    position: relative;
+    display: flex;
+  }
+
+  &__block {
+    width: calc(1280px/2);
+    padding-right: 10px;
+    & > div {
+      height: 100%;
+      & > div {
+        height: 100%;
+      }
+    }
+    @include mobile {
+      height: 220px;
+    }
+  }
+
+  &__item {
+    width: 640px;
+    min-height: 100%;
+    display: block;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0.75%;
+    
+    .button__prev, .button__next {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      @include laptop {
+        width: 40px;
+        height: 40px;
+      }
+      @include mobile {
+        width: 40px;
+        height: 40px;
+      }
+      &:hover {
+        path {
+          transform: scale(1.2);
+        }
+      }
+    }
+    .button__prev {
+      background-color: $color--light-gray;
+      &--white {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        path {
+          fill: $color--orange;
+        }
+      }
+    }
+
+    .button__next {
+      background-color: $color--orange;
+      &--orange {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        path {
+          fill: $color--white;
+        }        
+      }
+    }
+    
+  }
+}   

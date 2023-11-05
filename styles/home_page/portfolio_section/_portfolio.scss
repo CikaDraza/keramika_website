@@ -1,0 +1,89 @@
+.portfolio {
+  padding: 0px 0 150px 150px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  .tiles-sky-blue {
+    position: absolute;
+    top: 120px;
+    left: 0;
+  }
+
+  .tiles-blue-horizont {
+    position: absolute;
+    top: 650px;
+    left: 0px;
+  }
+
+  @include tablet {
+    padding: 20px;
+
+    .tiles-sky-blue {
+      top: 100px;
+    }
+  
+    .tiles-blue-horizont {
+      top: 300px;
+    }
+  }
+
+  @include mobile {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    .tiles-sky-blue {
+      top: 100px;
+    }
+  
+    .tiles-blue-horizont {
+      top: 300px;
+    }
+  }
+  
+  &__heading {
+    padding-bottom: 100px;
+    display: flex;
+
+    h2 {
+      color: $color--blue;
+      position: relative;
+    }
+
+    a {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      text-decoration: underline;
+      color: $color--link;
+      font-weight: 600;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      h2 {
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      a {
+        padding: 0;
+        margin: 0 auto;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      padding-bottom: 20px;
+        h2 {
+          padding-bottom: 20px;
+          text-align: center;
+        }
+        a {
+          padding: 0;
+          margin: 0 auto;
+        }
+    }
+  }  
+}

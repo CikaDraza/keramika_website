@@ -1,0 +1,114 @@
+.portfolio-carousel {
+  overflow: hidden;
+  width: 100%;
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .carousel-container {
+    @include mobile {
+      padding: 50px 0 0;
+      max-width: 100%;
+    }
+  }
+  
+  .carousel-items {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      justify-content: space-evenly;
+    }
+  }
+
+  .carousel__item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    @include mobile {
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  }
+  
+  .carousel-card {
+    width: 350px;
+    background-color: $color--light-blue;
+    position: relative;
+    right: calc(-100% + 300px);
+    margin-top: -100px;
+    padding: 20px;
+    h3 {
+      padding-bottom: 50px;
+      color: $color--blue;
+    }
+    .card__action {
+      width: 100%;
+      a {
+        width: 100%;
+        display: flex;      
+        justify-content: space-between;
+        color: $color--blue;
+      }
+    }
+
+    @include mobile {
+      width: 250px;
+      background-color: $color--light-blue;
+      position: relative;
+      left: 50%;
+      transform: translateX(-60%);
+      margin-top: -80px;
+      padding: 10px;
+      h3 {
+        padding-bottom: 20px;
+        color: $color--blue;
+      }
+    }
+  }
+  
+  .carousel-controls {
+    width: inherit;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+
+    @include mobile {
+      margin: 15px 0;
+      height: 50px;
+    }
+  }
+
+  .carousel-dots {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel__dot {
+    width: 20px;
+    height: 20px;
+    background-color: $color--blue;
+    border: none;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    margin-right: .5em;
+    cursor: pointer;
+  }
+  
+  .carousel__dot.selected {
+    width: 38px;
+    height: 38px;
+    border: 5px solid $color--orange;
+    transition: all 0.3s;
+  }
+
+} 
+
+  

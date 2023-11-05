@@ -1,0 +1,21 @@
+.error-page {
+  padding: 150px 0 180px;
+  
+  &__status {
+    color: $color--blue;
+    @include mobile {
+      width: 100%!important;
+      height: 60px;
+      position: relative;
+      z-index: 0;
+    }
+  }
+  .buttons {
+    padding-top: 100px;
+    .action--blue {
+      @include mobile {
+        width: 100%!important;
+      }
+    }
+  }  
+}

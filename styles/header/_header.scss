@@ -1,0 +1,95 @@
+.header {
+    @include mobile {
+        padding: 15px 0 10px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 10000;
+        background-color: $color--white;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 1px 5px #eeeeee;
+        .wrapper {
+            padding: 0;
+        }
+    }
+}
+
+.header__container {
+    padding: 30px 0;
+    @include mobile {  
+        padding: 0;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        display: flex;
+        align-items: center;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+
+.nav__item {
+    margin: 0 20px;
+    display: flex;
+}
+
+.nav__link {
+    line-height: 21.09px;
+    color: $color--gray;
+    text-decoration: none;
+
+    &:hover {
+        color: $color--orange;
+    }
+
+    &--active {
+        color: $color--dark-gray;
+        font-weight: $font--weight-bold;
+    }
+
+    @include mobile {  
+        font-size: 18px;
+        &--active {
+            color: $color--orange;
+        }
+    }
+}
+
+.nav__logo {
+    image-rendering: pixelated;
+    @include mobile {
+        height: 50px !important;
+        width: 50px !important;
+    }
+}
+
+.nav__icon {
+    &--facebook:hover {
+        path {
+            fill: #3b5998;
+        }        
+    }
+    &--insta:hover {
+        path {
+            fill: #833AB4;
+        }
+    }
+    &--youtube:hover {
+        path {
+            fill: #FF0000;
+        }
+    }
+    
+}

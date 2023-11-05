@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://keramikazivojinov.com
+
+# Sitemaps
+Sitemap: https://keramikazivojinov.com/sitemap.xml

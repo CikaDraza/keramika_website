@@ -1,0 +1,50 @@
+.portfolio-section {
+  padding: 150px 0px;
+  &__header {
+    color: $color--blue;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tab-box {
+    &__tabs {
+      padding-bottom: 50px;
+      button {
+        color: $color--orange;
+        @include mobile {
+          padding: 0;
+          font-size: 10px;
+        }
+      }
+      span.MuiTabs-indicator {
+        background-color: $color--orange;
+      }
+      @include mobile {
+        .MuiTabScrollButton-root {
+          display: flex;
+          color: $color--blue;
+        }
+      }
+    }
+  }
+
+
+  .tab-panel {
+    display: flex;
+    justify-content: center;
+    & > .MuiBox-root > .MuiBox-root {
+      width: 1280px;
+    }
+    @include mobile {
+      flex-direction: column;
+      & > .MuiBox-root > .MuiBox-root {
+        width: 300px;
+      }
+    }
+  }
+}

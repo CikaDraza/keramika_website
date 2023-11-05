@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $font--weight-bold;
+    font-family: 'Rubik', sans-serif;
+    line-height: 100%;
+}
+
+h1 {
+    font-size: clamp(50px, 10vw, 96px);
+}
+
+h2 {
+    font-size: clamp(36px, 10vw, 72px);
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    line-height: 150%;
+    color: $color--blue;
+    opacity: .6;
+    @include mobile {
+        font-size: 14px;
+    }
+}
+
+a {
+    font-family: 'Open sans', sans-serif;
+    color: $color--marine;
+}
+
+button {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    color: $color--white;
+}

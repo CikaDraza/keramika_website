@@ -1,0 +1,102 @@
+.intro {
+  padding-bottom: 150px;
+  @include mobile() {
+    padding-bottom: 50px;
+  }
+  .row {
+    display: flex;
+    @include mobile() {
+      flex-direction: column;
+    }
+  }
+  .column {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_exp-badge {
+    width: 260px;
+    height: 245px;
+    background-color: $color--black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 70px;
+    &_number {
+      color: $color--yellow;
+      font-size: 96px;
+      font-weight: bolder;
+      font-family: 'Rubik';
+    }
+    &_sub-text {
+      color: $color--yellow;
+      font-size: 18px;
+      font-weight: bolder;
+      font-family: 'Rubik';
+      padding-top: 25px;
+    }
+    @include mobile() {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+  }
+  &_heading {
+    position: relative;
+    &_title-box {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      z-index: 10;
+      h2 {
+        color: $color--blue;
+        padding-left: 70px;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 10%;
+          height: 85%;
+          width: 3px;
+          background-color: $color--blue;          
+        }
+        @include mobile() {
+          padding-left: 15px;
+        }
+      }
+    }
+    &_fuga {
+      position: absolute;
+      right: -5%;
+      bottom: -50%;
+      @include mobile() {
+        width: 100px;
+        right: 5%;
+        bottom: -30%;
+      }
+    }
+  }
+
+  &_process {
+    padding-top: 100px;
+    h3 {
+      color: $color--blue;
+      padding-bottom: 20px;
+    }
+    p {
+      color: $color--blue;
+    }
+  }
+  &_price-question {
+    padding-top: 50px;
+    h3 {
+      padding-bottom: 20px;
+      color: $color--blue;
+    }
+    p {
+      color: $color--blue;
+      padding: 0 0 20px;
+    }
+  }
+}

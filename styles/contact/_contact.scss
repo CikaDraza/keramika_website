@@ -1,0 +1,152 @@
+.contact-section {
+  padding: 150px 0 150px;
+  &__image {
+    display: flex;
+    position: absolute;
+    margin: -80px 50px;
+    width: 200px;
+    height: 100px;
+    z-index: -1;
+  }
+  &__title {
+    max-width: 100%;
+    padding: 0px 50px 100px;
+    @include mobile {
+      padding: 20px 10px;
+    }
+    h1 {
+      @include mobile {
+        font-size: 42px;
+        text-align: center;
+      }
+      color: $color--blue;
+    }
+    p {
+      text-transform: lowercase;
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+  .contact-section__form {
+    .contact-form-title {
+      color: $color--blue;
+      position: relative;
+      font-size: 42px;
+      padding-left: 20px;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0%;
+          height: 85%;
+          width: 3px;
+          background-color: $color--orange;          
+        }
+    }
+    .container {
+      padding-top: 50px;
+      padding-left: 24px;
+      padding-right: 24px;
+      width: 100%;
+      margin-left: auto;
+      box-sizing: border-box;
+      margin-right: auto;
+      display: block;
+      @include mobile {
+        padding-left: 0;
+      }
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    div.input-field {
+      width: 100%;
+      margin-top: 25px;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.4375em;
+      letter-spacing: 0.00938em;
+      cursor: text;
+      position: relative;
+      border-radius: 4px;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid;
+      border-radius: 4px;
+      border-color: rgba(0, 0, 0, 0.23);
+      background: none;
+      height: 1.4375em;
+      margin: 0;
+      -webkit-tap-highlight-color: transparent;
+      display: block;
+      padding: 16.5px 14px;
+      box-sizing: content-box;
+      outline: 0;
+    }
+    input[type="file"] {
+      background-color: $color--blue;
+      color: white;
+    }
+    .btn {
+      -webkit-tap-highlight-color: transparent;
+      background-color: transparent;
+      outline: 0;
+      border: 0;
+      margin: 0;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      vertical-align: middle;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.75;
+      letter-spacing: 0.02857em;
+      text-transform: uppercase;
+      min-width: 64px;
+      padding: 16.5px 14px;
+      border-radius: 4px;
+      -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      color: #fff;
+      background-color: $color--orange;
+      box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+      width: 100%;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    .input-field input:focus + label, .input-field textarea:focus + label, .input-field input[required]:valid ~ label + label, .input-field textarea[required]:valid + label {
+      top: -2%;
+      font-size: 16px;
+      padding: 2px 5px;
+      background: #fff;
+      color: $color--blue;
+      font-weight: 700;
+    }
+    .input-field label {
+      position: absolute;
+      top: 50%;
+      left: 2%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.384);;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+    .active-label {
+      top: -2%!important;
+      background: #fff!important;
+      color: $color--blue!important;
+      font-weight: 700!important;
+    }
+  }
+  
+  
+}

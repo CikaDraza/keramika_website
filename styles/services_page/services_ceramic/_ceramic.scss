@@ -1,0 +1,72 @@
+.ceramic {
+  padding-bottom: 150px;
+  @include mobile() {
+    padding-bottom: 50px;
+  }
+  h2 {
+    color: $color--blue;
+    padding-bottom: 150px;
+  }
+  &__box {
+    .row {
+      display: flex;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+    h3 {
+      color: $color--blue;
+      padding-bottom: 20px;
+    }
+    p {
+      color: $color--blue;
+      padding-bottom: 20px;
+    }
+    .second {
+      @include mobile() {
+        display: flex;
+        flex-direction: column;
+      }
+      .column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        p {
+          padding-right: 10px;
+
+          @include mobile() {
+            padding-right: 0px;
+          }
+        }
+      }
+      .img.column {
+        .img.row {
+          @include mobile() {
+            display: flex;
+            flex-direction: column;
+            .column {
+              flex: 1;
+              @include mobile() {
+                padding-bottom: 10px;
+              }
+            }
+          }
+        }
+        
+      }
+    }
+    .third {
+      @include mobile() {
+        display: flex;
+        flex-direction: column;
+      }
+      .column {
+        flex: 1;
+        @include mobile() {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}

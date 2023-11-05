@@ -1,0 +1,118 @@
+.buttons {
+  display: flex;
+  padding: 0;
+
+  &__action {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    width: 210px;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 25px -5px #00000070;
+
+    a {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;          
+
+      svg {
+        margin-right: 10px;
+        transition: transform 0.3s linear;
+      }
+    }
+
+    &:hover span {
+      color: $color--blue;
+      font-weight: $font--weight-bold;
+    }
+
+    &:hover a svg {
+      transform: scale(1.3);
+      font-weight: $font--weight-bold;
+      transition-delay: 0.4s;
+      fill: $color--blue;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 400%;
+      background-color: rgb(255, 255, 255);
+      transform: rotate(-45deg);
+      top: -50%;
+      left: -110%;
+              
+    }
+
+    &:hover::before {
+      animation: animate 0.7s 1;
+      top: -150%;
+      left: 0%;
+      transition: animation 1s ease-in-out;
+    }
+
+    @keyframes animate {
+      0% {
+        top: -60%;
+        left: -50%;
+      }
+      50% {
+        top: -190%;
+        left: 20%;
+      }
+      100% {
+        top: -190%;
+        left: -10%;
+      }
+    }
+    
+  }
+
+  .action--orange {
+    background-color: $color--orange;
+    margin-right: 60px;
+    position: relative;
+    svg {
+      z-index: 10;
+      margin-right: 10px;
+      transition: transform 0.3s linear;
+    }
+    &:hover span {
+      z-index: 10;
+      color: $color--blue;
+      font-weight: $font--weight-bold;
+    }
+
+    &:hover svg {
+      transform: scale(1.3);
+      color: $color--white;
+      font-weight: $font--weight-bold;
+      transition-delay: 0.4s;
+      fill: $color--blue;
+    }
+         
+    @include mobile {
+      width: 100%;
+      margin-right: 0px;
+      height: 60px;
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  .action--blue {
+    background-color: $color--blue;
+    a {
+      color: $color--white;
+    }
+  }
+}

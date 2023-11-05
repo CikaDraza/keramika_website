@@ -1,0 +1,52 @@
+.price-section {
+  padding: 150px 0 150px;
+  &__image {
+    display: flex;
+    position: absolute;
+    margin: -80px 50px;
+    width: 200px;
+    height: 100px;
+    z-index: -1;
+  }
+  &__title {
+    max-width: 100%;
+    padding: 0px 50px 100px;
+    h1 {
+      padding-bottom: 20px;
+    }
+    @include mobile {
+      padding: 20px 10px;
+    }
+    h1 {
+      @include mobile {
+        font-size: 42px;
+        text-align: center;
+      }
+      color: $color--blue;
+    }
+    p {
+      text-transform: lowercase;
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+  h3.sub-heading {
+    opacity: 1;
+  }
+  .price-calculator-title {
+    color: $color--blue;
+    position: relative;
+    font-size: 42px;
+    padding-left: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0%;
+        height: 85%;
+        width: 3px;
+        background-color: $color--orange;          
+      }
+  }
+}

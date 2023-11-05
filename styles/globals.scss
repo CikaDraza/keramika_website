@@ -1,0 +1,32 @@
+// CONFIGURATION
+@import 'mixins';
+@import 'reset';
+@import 'config';
+@import 'typography';
+
+// LAYOUT
+@import 'layout';
+
+// Buttons
+@import 'components/buttons';
+
+// LAYOUT COMPONENTS
+
+@import 'error_page/error';
+@import 'header/header';
+@import 'components/drawer';
+@import 'components/hero-carousel';
+@import 'components/portfolio-courusel';
+@import 'components/video-modal';
+@import 'footer/footer';
+@import 'home_page/hero_section/hero';
+@import 'home_page/services_section/services';
+@import 'home_page/price_section/price';
+@import 'home_page/why_coose_us/choose-us';
+@import 'home_page/portfolio_section/portfolio';
+@import 'services_page/services_hero/hero';
+@import 'services_page/services_intro/intro';
+@import 'services_page/services_ceramic/ceramic';
+@import 'prices/prices';
+@import 'portfolio/portfolio';
+@import 'contact/contact';
