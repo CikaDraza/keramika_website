@@ -291,12 +291,12 @@ export default function ContactForm({ match }) {
             </li>
             <li>
               <StrongComponent>Telefon</StrongComponent><br/>
-              +381 (0) 60 53 54 777<br />
-              <span style={{display: 'flex', alignItems: 'center'}}><Viber style={{marginRight: '10px'}} width={20} height={20} fill={'#fff'}/> +381 (0) 60 53 54 777</span>
+              +381 (0) 60 555 333<br />
+              <span style={{display: 'flex', alignItems: 'center'}}><Viber style={{marginRight: '10px'}} width={20} height={20} fill={'#fff'}/> +381 (0) 60 555 333</span>
             </li>
             <li>
               <StrongComponent>Email</StrongComponent><br/>
-              nemanjazivojinov1@gmail.com
+              keramicar.lale@keramika.com
             </li>
             <li>
               <StrongComponent>Radno vreme</StrongComponent><br/>

@@ -29,7 +29,7 @@ export default function PricePage() {
 }
 
 const priceList = {
-  h2: "",
+  h2: "Kako formiramo cene",
   subHeading: "Planovi keramičarskih usluga",
   p1: "Izaberite planove cena koji vam odgovaraju.",
   p2: "Satnica keramičara se kreće od 10 do 50 evra po satu ili više u zavisnosti od posla, vremena i lokacije. Prema podacima o kretanju cena može da se menjaju troškovi iz dana u dan.",

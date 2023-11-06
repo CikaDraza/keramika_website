@@ -27,8 +27,6 @@ export default function Footer(props) {
     });
   }
 
-  console.log(router.pathname);
-
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => {
@@ -69,16 +67,16 @@ export default function Footer(props) {
           <div className="footer-top__row">
             <div className="footer-top__column first">
               <div className="image-wrapper">
-                <Image src="/logo/logo_kada.png" width={50} height={50} alt="logo keramika zivojinov" />
+                <Image src="/logo/logo_lale.png" width={50} height={50} alt="logo keramičar Lale" />
               </div>
-              <p>Keramika Zivojinov se bavi keramičarskim radovima više od 10 godina. Učinićemo i vaš dom lepšim mestom za stanovanje.</p>
+              <p>Keramičar Lale se bavi keramičarskim radovima više od 10 godina. Učinićemo i vaš dom lepšim mestom za stanovanje.</p>
             </div>
             <div className="footer-top__column">
               <h6>Kontakt</h6>
               <ul>
                 <li>Stevana Sremca 89k, Sremska Mitrovica 22000, Srbija</li>
-                <li>+381 {'(0)'} 60 53 54 777</li>
-                <li>nemanjazivojinov1@gmail.com</li>                
+                <li>+381 {'(0)'} 60 555 333</li>
+                <li>keramicar.lale@keramika.com</li>                
               </ul>
             </div>
             <div className="footer-top__column">

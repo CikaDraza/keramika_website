@@ -31,8 +31,17 @@
       }
     }
   }
+  &__content {
+    .price {
+      h2 {
+        padding-bottom: 2rem;
+        text-align: left;
+      }
+    }
+  }
   h3.sub-heading {
     opacity: 1;
+    padding-bottom: 2rem;
   }
   .price-calculator-title {
     color: $color--blue;

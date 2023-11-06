@@ -24,8 +24,9 @@ export default function Header(props) {
         <div className="header__container">
           <nav className="nav">
             <Link href="/">
-              <a>
-                <Image src='/logo/logo.png' width={match ? logoProps.mobileWidth : logoProps.desktopWidth} height={match ? logoProps.mobileHeight : logoProps.desktopHeight} alt='Logo' className="nav__logo"/>
+              <a className='logo-link'>
+                <Image src='/logo/logo_lale.png' width={match ? logoProps.mobileWidth : logoProps.desktopWidth} height={match ? logoProps.mobileHeight : logoProps.desktopHeight} alt='Logo' className="nav__logo"/>
+                <p>Keramičar Lale</p>
               </a>
             </Link>
             <ul className="nav__list">

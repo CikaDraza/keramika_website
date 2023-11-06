@@ -18,9 +18,7 @@ export default function Prices(props) {
         <div className="price-section__content">
           <section className="price">
             <div className="wrapper">
-            {/* <h2>{priceListProps.h2}</h2> */}
-            <PriceTables {...priceTableProps}/>
-            <h3 className="sub-heading">{priceListProps.subHeading}</h3>
+              <h2>{priceListProps.h2}</h2>
               <div className="price-row">
                 <div className="price-column">
                 <div className="description">
@@ -35,6 +33,8 @@ export default function Prices(props) {
                 </div>
                 </div>
               </div>
+              <PriceTables {...priceTableProps}/>
+              <h3 className="sub-heading">{priceListProps.subHeading}</h3>
               <div className="price-row">
                 <div className="price-column">
                 {
@@ -120,10 +120,10 @@ export default function Prices(props) {
                   ))
                 }
                 </div>
-                </div>
-                <div className="price__action">
-                <Link href="/kontakt"><a>{priceListProps.actionBtn}</a></Link>
-                </div>
+              </div>
+              <div className="price__action">
+              <Link href="/kontakt"><a>{priceListProps.actionBtn}</a></Link>
+              </div>
             </div>      
           </section>
           <section id='price-calc' className='price'>

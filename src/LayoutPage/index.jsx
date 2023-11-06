@@ -24,10 +24,10 @@ export default function LayoutPage({ children }) {
 }
 
 const logo = {
-  desktopWidth: 150,
-  desktopHeight: 60,
-  mobileWidth: 90,
-  mobileHeight: 35,
+  desktopWidth: 72,
+  desktopHeight: 72,
+  mobileWidth: 72,
+  mobileHeight: 72,
 }
 
 const widget = {

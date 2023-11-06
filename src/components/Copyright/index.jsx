@@ -7,13 +7,13 @@ export default function Copyright() {
       {`© ${new Date().getFullYear()}`}
       {'.'}
       {' '}
-      Sva prava zadržava Keramika Živojinov
+      Sva prava zadržava Keramičar Lale
       {' '}
       {' | '}
       Powerd By
       {' '}
-      <Link href="">
-        DMDevelo.com
+      <Link href="https://www.linkedin.com/in/milan-dražić-1b64a1279/">
+        DMDevelo
       </Link>
     </p>
   )

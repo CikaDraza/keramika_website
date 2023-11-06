@@ -26,6 +26,13 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    .logo-link {
+        display: flex;
+        align-items: center;
+        @include mobile {  
+            display: block;
+        }
+    }
 }
 
 .nav__list {
