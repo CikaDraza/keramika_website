@@ -12,7 +12,7 @@ class MainDocument extends Document {
         <Head>
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="language" content="Serbian, Srpski" />
-          <meta name="copyright" content="Keramika Živojinov" />
+          <meta name="copyright" content="Keramičar Lale" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>

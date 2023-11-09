@@ -72,23 +72,8 @@
       position: relative;
       border-radius: 4px;
     }
-    input, textarea {
-      width: 100%;
-      border: 1px solid;
-      border-radius: 4px;
-      border-color: rgba(0, 0, 0, 0.23);
-      background: none;
-      height: 1.4375em;
-      margin: 0;
-      -webkit-tap-highlight-color: transparent;
-      display: block;
-      padding: 16.5px 14px;
-      box-sizing: content-box;
-      outline: 0;
-    }
     input[type="file"] {
-      background-color: $color--blue;
-      color: white;
+      display: none;
     }
     .btn {
       -webkit-tap-highlight-color: transparent;

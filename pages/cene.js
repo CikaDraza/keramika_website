@@ -19,7 +19,7 @@ export default function PricePage() {
     <Head>
       <meta name="robots" content="index, nofollow"/>
       <meta name="description" content="Cene keramičarskih radova, cene renoviranja kupatila. Izaberite planove cena koji vam odgovaraju. Ovde možete videti naše cene i izračunati okvirnu cenu u odnosu na vašu kvadraturu prostorije" />
-      <title>Cene | Keramika Živojinov</title>
+      <title>Cene | Keramikčar Lale</title>
     </Head>
     <main className="contact-page">
       <Prices {...priceProps}/>

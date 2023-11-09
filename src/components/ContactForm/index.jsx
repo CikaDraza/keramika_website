@@ -3,6 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Paper from '@mui/material/Paper';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EmailIcon from '@mui/icons-material/Email';
@@ -16,6 +17,17 @@ import Link from 'next/link';
 import YouTubeSvg from '../Icons/YouTube';
 import InstaSvg from '../Icons/Insta';
 import Viber from '../Icons/Viber';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { Typography } from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Chip from '@mui/material/Chip';
+import axios from 'axios';
 
 const Input = styled('input')({
   display: 'none',
@@ -84,38 +96,76 @@ const UlSocialIcons = styled('ul')(({ theme }) => ({
 }))
 
 export default function ContactForm({ match }) {
-  const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
-  const [selectedFile, setSelectedFile] = React.useState();
-	const [isFilePicked, setIsFilePicked] = React.useState(false);
+  const [imgFile, setImgFile] = React.useState([]);
+  const [room, setRoom] = React.useState([]);
+
+  const handleChangeRoom = (event) => {
+    const { target: { value } } = event;
+    setRoom(typeof value === 'string' ? value.split(',') : value);
+  };
+
+  const names = [
+    'Kupatilo',
+    'Kuhinja',
+    'Dnevna Soba',
+    'Hodnik',
+    'Stepeniste',
+    'Terasa',
+    'Trpezarija',
+  ];
+
   const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    if(event.target.name !== '' ) {
-      setError(true);
-    }else {
-      setError(false);
+  function handleImageChoose(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+        setImgFile([
+          ...imgFile,
+          {            
+            image: file,
+            imageUrl: reader.result
+          }
+        ]);
+        e.target.value = ''
+    }
+    reader.readAsDataURL(file);
+  }
+
+  const handleUploadImage = async (event) => {
+    event.preventDefault();
+    try {
+      const formData = {
+        image_name: imgFile.image?.name,
+        image: imgFile?.imageUrl,
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      setError(true)
     }
   };
 
-  const handleUploadFile = (e) => {
-    setSelectedFile(e.target.files[0]);
-    setIsFilePicked(true);
-  }
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   const images = event.currentTarget.files[0];
-  //   // eslint-disable-next-line no-console
-  //   console.log({
-  //     email: data.get('email'),
-  //     name: data.get('name'),
-  //     phone: data.get('phone'),
-  //     address: data.get('location'),
-  //     image: data.append('images', images)
-  //   });
-  // };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const dataForm = new FormData(event.currentTarget);
+      handleUploadImage(event);
+      const formOutput = {
+        email: dataForm.get('email'),
+        name: dataForm.get('firstName'),
+        last_name: dataForm.get('lastName'),
+        phone: dataForm.get('phone'),
+        room: room,
+        message: dataForm.get('message'),
+        image: imgFile.map(item => item.imageUrl)
+      }
+      const { data } = await axios.post('/api/contact', formOutput);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -137,63 +187,7 @@ export default function ContactForm({ match }) {
               <h2 className="contact-form-title">
                 Kontakt Forma
               </h2>
-              <div className="container">
-                  <form className="form" autoComplete="off" name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" component="form" encType="multipart/form-data">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div style={{display: 'none'}}>
-                      <input name="bot-field" />
-                    </div>
-                    <div className="input-field">
-                      <input id="name-field" type="text" name="name" onChange={handleChange}/>
-                      <label className={error && 'active-label'} htmlFor="name-field">Ime</label>
-                  
-                    </div>
-                    <div className="input-field">
-                      <input type="email" onChange={handleChange} name="_replyto" id="email" className="email-field" required/>
-                      <label className={error && 'active-label'} htmlFor="email">Email</label>
-                    </div>
-                    <div className="input-field">
-                      <input type="tel" id="phone" onChange={handleChange} name="phone"/>
-                      <label className={error && 'active-label'} htmlFor="phone">Mobilni</label>
-                     
-                    </div>
-                    <div className="input-field">
-                      <textarea cols="22" rows="5" onChange={handleChange} type="text" id="message" name="message"></textarea>
-                      <label className={error && 'active-label'} htmlFor="message">Poruka</label>
-                    </div>
-                    <div className="input-field">
-                      <input type="submit" value="Pošalji" className="btn"/>
-                    </div>
-                    <div className="input-field">
-                      <input accept="image/jpg image/png image/jpeg" type="file" name="attach" />
-                    </div>
-                  </form>
-                {/*<form autoComplete="off" name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" component="form" encType="multipart/form-data">
-                <input type="hidden" name="form-name" value="contact" />
-                <div style={{display: 'none'}}>
-                  <input name="bot-field" />
-                </div>
-                  <label htmlFor="fname">Ime</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Vase ime.."/>
-              
-                  <label htmlFor="lname">Prezime</label>
-                  <input type="text" id="lname" name="lastname" placeholder="Vase prezime.."/>
-
-                  <label htmlFor="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Email.."/>
-              
-                  <label htmlFor="subject">Poruka</label>
-                  <textarea id="subject" name="subject" placeholder="Opis projekta.." style={{height: "200px"}}></textarea>
-              
-                  <input type="submit" value="Submit" />
-                  <input accept="image/jpg image/png image/jpeg" id="file" type="file" multiple name="file"  />
-          </form>*/}
-              </div>
-     {    /*     <Box noValidate autoComplete="off" name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" component="form" enctype="multipart/form-data" sx={{ mt: 10 }}>
-              <input type="hidden" name="form-name" value="contact" />
-              <Box sx={{display: 'none'}}>
-                <input name="bot-field" />
-              </Box>
+              <Box onSubmit={handleSubmit} method="POST" component="form" sx={{ mt: 10 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -223,20 +217,62 @@ export default function ContactForm({ match }) {
                     id="email"
                     label="Email Adresa"
                     name="email"
-                    value={value}
-                    onChange={handleChange}
                     autoComplete="email"
                     helperText={error && "Unesite validnu email adresu"}
                   />
                 </Grid>
                 <Grid item xs={12}>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Poruka"
-                  multiline
-                  fullWidth
-                  name='message'
-                  maxRows={12}
+                  <TextField
+                    error={error}
+                    required
+                    type='number'
+                    fullWidth
+                    id="phone"
+                    label="Telefon"
+                    name="phone"
+                    autoComplete="phone"
+                    helperText={error && "Unesite validan telefon"}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-multiple-chip-label">Prostorije</InputLabel>
+                    <Select
+                      labelId="demo-multiple-chip-label"
+                      id="demo-multiple-chip"
+                      multiple
+                      value={room}
+                      onChange={handleChangeRoom}
+                      input={<OutlinedInput id="select-multiple-rooms" label="Prostorije" />}
+                      renderValue={(selected) => (
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                          {selected.map((value) => (
+                            <Chip key={value} label={value} />
+                          ))}
+                        </Box>
+                      )}
+                    >
+                      {names.map((name) => (
+                        <MenuItem
+                          key={name}
+                          value={name}
+                        >
+                          {name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                <TextareaAutosize
+                  name="message"
+                  id='message'
+                  required
+                  placeholder="Poruka"
+                  maxRows={10}
+                  minRows={4}
+                  aria-label="textarea-message"
+                  style={{ width: '100%', resize: 'vertical', padding: '8px' }}
                 />
                 </Grid>
                 <Grid item xs={12}>
@@ -244,6 +280,20 @@ export default function ContactForm({ match }) {
                     control={<Checkbox value="allowExtraEmails" color="primary" />}
                     label="Želim da dobijam inspiraciju, marketinške promocije i ažuriranja putem e-pošte."
                   />
+                </Grid>
+              </Grid>
+              <Grid sx={{py: 3}} container spacing={3}>
+                <Grid item xs={12}>
+                  <Typography component="p" variant='h6' sx={{pb: 3}}>Posaljite slike vasih prostorija {'(do pet fotografija)'}</Typography>
+                  <Stack direction="row" alignItems="center" spacing={2}>
+                    <Box component="label" onChange={handleImageChoose} htmlFor="file">
+                      <Button variant="contained" component="span" startIcon={<PhotoCamera />}>
+                          Upload
+                      </Button>
+                      <Box sx={{display: 'none'}} accept="image/jpg image/png image/jpeg" component="input" type="file" name="file" id="file"/>
+                    </Box>
+                  </Stack>
+                  <ChipsArray selectedFile={imgFile} setImgFile={setImgFile} />
                 </Grid>
               </Grid>
               <Button
@@ -255,20 +305,7 @@ export default function ContactForm({ match }) {
               >
                 Pošalji
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Stack direction="row" alignItems="center" spacing={2}>
-                    <label htmlFor="file">
-                      <Input onChange={handleUploadFile} accept="image/jpg image/png image/jpeg" id="file" type="file" name="file" />
-                      <Button id='file' variant="contained" component="span" startIcon={<PhotoCamera />}>
-                          Upload
-                      </Button>
-                    </label>
-                  </Stack>
-                </Grid>
-              </Grid>
             </Box>
-          <ChipsArray selectedFile={isFilePicked && selectedFile}/> */}
           </Box>
         </Grid>
         <Grid

@@ -36,8 +36,8 @@ export default function Home({ data }) {
       <Head>
         <meta name="robots" content="index, follow"/>
         <meta name="keywords" content="keramičar, renoviranje kupatila, cene renoviranja"/>
-        <meta name="description" content="Potrebn vam je keramičar? Tu smo za vas da renoviranje stana ne bude više noćna mora!" />
-        <title>Keramičar | Keramika Živojinov</title>
+        <meta name="description" content="Potrebn vam je keramičar? Tu smo za vas da renoviranje kuće ili stana ne bude vaša noćna mora!" />
+        <title>Keramičar Lale | Keramikačarske Usluge</title>
       </Head>
       <main>
         <HomeLayout {...homeProps} />
