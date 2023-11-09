@@ -22,8 +22,8 @@ app.listen(5000, () => {
 //     port: 587, // Možete takođe koristiti 465 za TLS Wrapper
 //     secure: false, // Postavite na true ako koristite port 465
 //     auth: {
-//         user: 'AKIARP2HWMYLMQQCASG4',
-//         pass: 'KgP5hVn7cqVYUOcc8rGvgYTF38TZSo4vTjqtFMak',
+//         user: '',
+//         pass: '',
 //     },
 // });
 
