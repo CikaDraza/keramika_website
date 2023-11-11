@@ -24,9 +24,7 @@ export default function Error() {
         <div className="error-page__btn buttons">
           <button className="buttons__action action--blue">
           <Link href="/">
-            <a>
-              <span>Nazad na sigurno</span>
-            </a>
+            <span>Nazad na sigurno</span>
           </Link>
           </button>
         </div>

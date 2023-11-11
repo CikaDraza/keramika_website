@@ -29,10 +29,6 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Chip from '@mui/material/Chip';
 import axios from 'axios';
 
-const Input = styled('input')({
-  display: 'none',
-});
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -99,6 +95,7 @@ export default function ContactForm({ match }) {
   const [error, setError] = React.useState(false);
   const [imgFile, setImgFile] = React.useState([]);
   const [room, setRoom] = React.useState([]);
+  const formRef = React.useRef(null);
 
   const handleChangeRoom = (event) => {
     const { target: { value } } = event;
@@ -133,24 +130,17 @@ export default function ContactForm({ match }) {
     reader.readAsDataURL(file);
   }
 
-  const handleUploadImage = async (event) => {
-    event.preventDefault();
-    try {
-      const formData = {
-        image_name: imgFile.image?.name,
-        image: imgFile?.imageUrl,
-      }
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      setError(true)
-    }
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const emailValue = formRef.current.querySelector('input[name="email"]');
+    const firstNameValue = formRef.current.querySelector('input[name="firstName"]');
+    const lastNameValue = formRef.current.querySelector('input[name="lastName"]');
+    const phoneValue = formRef.current.querySelector('input[name="phone"]');
+    const messageValue = formRef.current.querySelector('textarea[name="message"]');
+    const subscribeValue = formRef.current.querySelector('input[name="subscription"]');
+
     try {
       const dataForm = new FormData(event.currentTarget);
-      handleUploadImage(event);
       const formOutput = {
         email: dataForm.get('email'),
         name: dataForm.get('firstName'),
@@ -158,14 +148,23 @@ export default function ContactForm({ match }) {
         phone: dataForm.get('phone'),
         room: room,
         message: dataForm.get('message'),
-        image: imgFile.map(item => item.imageUrl)
+        image: imgFile.map(item => item.imageUrl),
+        subscribe: dataForm.get('subscription'),
       }
-      const { data } = await axios.post('/api/contact', formOutput);
-      console.log(data);
+      const { data } = await axios.post('https://node-mailer-eight.vercel.app/api/contact', formOutput);
+      setImgFile(() => []);
+      setRoom(() => []);
+      emailValue.value = '';
+      firstNameValue.value = '';
+      lastNameValue.value = '';
+      phoneValue.value = '';
+      messageValue.value = '';
+      subscribeValue.checked = false;
+      
     } catch (error) {
       console.log(error);
     }
-  };
+  };  
 
   return (
     <ThemeProvider theme={theme}>
@@ -187,7 +186,7 @@ export default function ContactForm({ match }) {
               <h2 className="contact-form-title">
                 Kontakt Forma
               </h2>
-              <Box onSubmit={handleSubmit} method="POST" component="form" sx={{ mt: 10 }}>
+              <Box ref={formRef} onSubmit={handleSubmit} method="POST" component="form" sx={{ mt: 10 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -277,7 +276,7 @@ export default function ContactForm({ match }) {
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
+                    control={<Checkbox value="allowExtraEmails" name='subscription' color="primary" />}
                     label="Želim da dobijam inspiraciju, marketinške promocije i ažuriranja putem e-pošte."
                   />
                 </Grid>
@@ -333,7 +332,7 @@ export default function ContactForm({ match }) {
             </li>
             <li>
               <StrongComponent>Email</StrongComponent><br/>
-              keramicar.lale@keramika.com
+              info@keramicar-lale.com
             </li>
             <li>
               <StrongComponent>Radno vreme</StrongComponent><br/>
@@ -346,23 +345,17 @@ export default function ContactForm({ match }) {
           <UlSocialIcons>
             <li>
                <Link  href="https://www.facebook.com/profile.php?id=100063739952191" passHref>
-                  <a target="_blank">
-                    <FacebookSvg className="nav__icon--facebook" width={20} height={20} />                 
-                  </a>
+                  <FacebookSvg className="nav__icon--facebook" width={20} height={20} />                 
                 </Link>
             </li>
             <li>
                 <Link href="https://www.youtube.com/channel/UC3u9C_wdhIn81JGnrmMzWrA" passHref>
-                  <a target="_blank">
-                    <YouTubeSvg className="nav__icon--youtube" width={25} height={25} />
-                  </a> 
+                  <YouTubeSvg className="nav__icon--youtube" width={25} height={25} />
                 </Link>
             </li>
             <li>
                 <Link href="https://www.instagram.com/zivojinovkeramika/">
-                  <a target="_blank">
-                    <InstaSvg className="nav__icon--insta" width={20} height={20} />
-                  </a>
+                  <InstaSvg className="nav__icon--insta" width={20} height={20} />
                 </Link>
             </li>
           </UlSocialIcons>
