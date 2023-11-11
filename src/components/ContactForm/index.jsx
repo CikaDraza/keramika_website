@@ -86,7 +86,7 @@ const UlSocialIcons = styled('ul')(({ theme }) => ({
       }
     }
   },
-  '& > li:not(:first-child)': {
+  '& > li:not(:first-of-type)': {
     marginLeft: '22px'
   }
 }))
@@ -151,7 +151,9 @@ export default function ContactForm({ match }) {
         image: imgFile.map(item => item.imageUrl),
         subscribe: dataForm.get('subscription'),
       }
-      const { data } = await axios.post('https://node-mailer-eight.vercel.app/api/contact', formOutput);
+      
+      const { data } = await axios.post('/api/contact', formOutput);
+
       setImgFile(() => []);
       setRoom(() => []);
       emailValue.value = '';
