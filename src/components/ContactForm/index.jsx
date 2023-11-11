@@ -152,7 +152,7 @@ export default function ContactForm({ match }) {
         subscribe: dataForm.get('subscription'),
       }
       
-      const { data } = await axios.post('/api/contact', formOutput);
+      const { data } = await axios.post('https://keramicar-lale.online/api/contact', formOutput);
 
       setImgFile(() => []);
       setRoom(() => []);
