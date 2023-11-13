@@ -18,7 +18,7 @@ export default function Drawer( { handleOpenDrawer, open }) {
           <Link href="/usluge" className={router.pathname == "/usluge" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Usluge</Link>
         </li>
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          
+          <Link href="/radovi" className={router.pathname == "/radovi" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Rani Radovi</Link>
         </li>
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
           <Link href="/kontakt" className={router.pathname == "/kontakt" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Kontakt</Link>
