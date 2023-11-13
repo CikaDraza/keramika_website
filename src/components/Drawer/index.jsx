@@ -8,20 +8,20 @@ export default function Drawer( { handleOpenDrawer, open }) {
   return (
     <nav className={!open ? "nav-drawer" : "nav-drawer nav-drawer--active"}>
       <ul className="nav-drawer__list">
-        <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/" className={router.pathname == "/" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Naslovna</Link>
+        <li className={router.pathname == "/" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"}> onClick={handleOpenDrawer}>
+          <Link href="/"></Link>Naslovna</Link>
         </li>
-        <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/cene" className={router.pathname == "/cene" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Cene</Link>
+        <li className={router.pathname == "/cene" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"} onClick={handleOpenDrawer}>
+          <Link href="/cene">Cene</Link>
         </li>
-        <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/usluge" className={router.pathname == "/usluge" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Usluge</Link>
+        <li className={router.pathname == "/usluge" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"} onClick={handleOpenDrawer}>
+          <Link href="/usluge">Usluge</Link>
         </li>
-        <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/radovi" className={router.pathname == "/radovi" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Rani Radovi</Link>
+        <li className={router.pathname == "/radovi" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"} onClick={handleOpenDrawer}>
+          <Link href="/radovi">Rani Radovi</Link>
         </li>
-        <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/kontakt" className={router.pathname == "/kontakt" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Kontakt</Link>
+        <li className={router.pathname == "/kontakt" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"} onClick={handleOpenDrawer}>
+          <Link href="/kontakt">Kontakt</Link>
         </li>
       </ul>
     </nav>
