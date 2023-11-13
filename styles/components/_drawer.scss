@@ -40,7 +40,13 @@
       transform: scale(0);
       transition: transform .7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       &--active {
-        color: $color--orange;
+        color: $color--orange!important;
+        a {
+          color: $color--orange!important;
+        }
+      }
+      a {
+        color: $color--light-gray;
       }
   }  
 }
