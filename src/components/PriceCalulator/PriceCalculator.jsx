@@ -76,13 +76,13 @@ export default function PriceCalculator() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel className='tab-panel' value={value} index={0} dir={theme.direction}>
-          <SurfaceAreaSlider />
+          <SurfaceAreaSlider tab={0} />
         </TabPanel>
         <TabPanel className='tab-panel' value={value} index={1} dir={theme.direction}>
-          Item Two
+          <SurfaceAreaSlider tab={1} />
         </TabPanel>
         <TabPanel className='tab-panel' value={value} index={2} dir={theme.direction}>
-          Item Three
+          <SurfaceAreaSlider tab={2} />
         </TabPanel>
       </SwipeableViews>
     </Box>

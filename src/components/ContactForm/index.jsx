@@ -28,6 +28,9 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Chip from '@mui/material/Chip';
 import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const theme = createTheme({
   palette: {
@@ -92,10 +95,15 @@ const UlSocialIcons = styled('ul')(({ theme }) => ({
 }))
 
 export default function ContactForm({ match }) {
-  const [error, setError] = React.useState(false);
+  const [errors, setErrors] = React.useState({
+    email: false,
+    phone: false,
+    imageLength: false
+  });
   const [imgFile, setImgFile] = React.useState([]);
   const [room, setRoom] = React.useState([]);
   const formRef = React.useRef(null);
+  const [open, setOpen] = React.useState(false);
 
   const handleChangeRoom = (event) => {
     const { target: { value } } = event;
@@ -112,7 +120,23 @@ export default function ContactForm({ match }) {
     'Trpezarija',
   ];
 
-  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  const pattern_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  const pattern = /^0\d{8,10}$/;
+
+  const handleClose = (event, reason) => {
+    setOpen(false);
+  };
+
+  const action = (
+    <IconButton
+    size="small"
+    aria-label="close"
+    color="inherit"
+    onClick={handleClose}
+    >
+      <CloseIcon fontSize="small" />
+    </IconButton>
+  );
 
   function handleImageChoose(e) {
     const file = e.target.files[0];
@@ -151,9 +175,25 @@ export default function ContactForm({ match }) {
         image: imgFile.map(item => item.imageUrl),
         subscribe: dataForm.get('subscription'),
       }
+
+      if(!pattern_email.test(formOutput.email)) {
+        setErrors({ ...errors, email: true });
+        setOpen(true);
+        return;
+      }
+      if(!pattern.test(formOutput.phone.toString())) {
+        setErrors({ ...errors, phone: true });
+        setOpen(true);
+        return;
+      }
+      if (imgFile.length > 5) {
+        setErrors({ ...errors, imageLength: true });
+        setOpen(true);
+        return;
+      }
       
       const { data } = await axios.post('/api/contact', formOutput);
-
+      setErrors({ ...errors, email: false, phone: false, imageLength: false });
       setImgFile(() => []);
       setRoom(() => []);
       emailValue.value = '';
@@ -162,7 +202,7 @@ export default function ContactForm({ match }) {
       phoneValue.value = '';
       messageValue.value = '';
       subscribeValue.checked = false;
-      
+      setOpen(true);
     } catch (error) {
       console.log(error);
     }
@@ -212,19 +252,19 @@ export default function ContactForm({ match }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    error={error}
+                    error={errors.email}
                     required
                     fullWidth
                     id="email"
                     label="Email Adresa"
                     name="email"
                     autoComplete="email"
-                    helperText={error && "Unesite validnu email adresu"}
+                    helperText={errors.email && "Unesite validnu email adresu"}
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    error={error}
+                    error={errors.phone}
                     required
                     type='number'
                     fullWidth
@@ -232,7 +272,7 @@ export default function ContactForm({ match }) {
                     label="Telefon"
                     name="phone"
                     autoComplete="phone"
-                    helperText={error && "Unesite validan telefon"}
+                    helperText={errors.phone && "Unesite validan telefon"}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -298,7 +338,7 @@ export default function ContactForm({ match }) {
                 </Grid>
               </Grid>
               <Button
-                disabled={error && true}
+                disabled={imgFile.length > 5 && true}
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -363,6 +403,17 @@ export default function ContactForm({ match }) {
           </UlSocialIcons>
         </Grid>
       </Grid>
+      <Stack spacing={2}>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Snackbar
+          sx={{ flexGrow: 0 }}
+          onClose={handleClose}
+          open={open}
+          action={action}
+          message={errors.email ? 'Unesite validnu email adresu' : errors.phone ? 'Unesite validan telefon' : errors.imageLength ? 'Maksimalan broj slika je 5' : 'Poruka je uspesno poslata'}
+        />
+      </Snackbar>
+    </Stack>
     </ThemeProvider>
   );
 }

@@ -34,6 +34,14 @@ body {
     scroll-behavior: smooth;
 }
 
+.main-bg {
+    background-color: $color--orange;
+}
+
+.main-color {
+    color: $color--orange;
+}
+
 .home-sections {
     background: linear-gradient(180deg, #F5F9FF 0%, #fff 100%);
 }

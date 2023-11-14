@@ -4,6 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ImageMasonry from '../../../components/Image_Masonry';
+import Slider from "react-slick";
+import Image from 'next/image';
+import { Typography, useMediaQuery } from '@mui/material';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,7 +43,18 @@ function a11yProps(index) {
 
 export default function FilterTabs(props) {
   const { match, portfolioFilterTabsProps, portfolioImagesProps } = props;
+  const desktop = useMediaQuery('(min-width: 1280px)');
+  const tablet = useMediaQuery('(max-width: 960px)');
+  const laptop = useMediaQuery('(max-width: 1200px)');
   const [value, setValue] = useState(0);
+  const settings = {
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 500,
+    slidesToShow: match ? 1 : desktop ? 3 : laptop ? 2 : 1,
+    slidesToScroll: 1
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -48,7 +62,7 @@ export default function FilterTabs(props) {
 
   return (
     <Box className="wrapper">
-      <Box className="tab-box" sx={match ? { maxWidth: 300 } : { maxWidth: 1000 }}>
+      <Box className="tab-box" sx={match ? { maxWidth: 300 } : { maxWidth: 1280 }}>
         <Tabs variant="scrollable" scrollButtons="auto" className="tab-box__tabs" value={value} onChange={handleChange} aria-label="scrollable">
           <Tab label="sve" {...a11yProps(0)} />
           <Tab label="kupatila" {...a11yProps(1)} />
@@ -58,6 +72,21 @@ export default function FilterTabs(props) {
         </Tabs>
       </Box>
       <TabPanel className="tab-panel" value={value} index={0}>
+        <Typography component="h2" variant='h6' className='main-bg' sx={{display: 'flex', justifyContent: 'center', width: '100px', borderRadius: '5px'}}>Novo</Typography>
+        <Slider {...settings}>
+          {portfolioImagesProps?.images.slice(0, 1).map((image) => image[Object.keys(image)[0]].slice(0, 6).map((item, index) => (
+            <Box key={index} sx={{width: '100%', p: 1}}>
+              <Image
+                width={match ? 280 : 480}
+                height={match ? 370 : 640}
+                src={`${item.imgPath}?w=333&auto=format`}
+                srcSet={`${item.imgPath}?w=333&auto=format&dpr=2 2x`}
+                alt={item.alt}
+                loading="lazy"
+              />
+            </Box>
+          )))}
+        </Slider>
         <ImageMasonry tab={0} images={portfolioImagesProps.images} match={match}/>
       </TabPanel>
       <TabPanel className="tab-panel" value={value} index={1}>
