@@ -12,19 +12,20 @@ function TabPanel(props) {
   const { children, value, index, ...other } = props;
  
   return (
-    <div
+    <Box
       role="tabpanel"
       hidden={value !== index}
       id={`scrollable-auto-tabpanel-${index}`}
       aria-labelledby={`scrollable-auto-tab-${index}`}
+      sx={{width: '100%'}}
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3, width: '100%' }}>
+        <Box className={`tab-${index}`} sx={{ p: 1, width: '100%' }}>
           {children}
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 
@@ -44,16 +45,16 @@ function a11yProps(index) {
 export default function FilterTabs(props) {
   const { match, portfolioFilterTabsProps, portfolioImagesProps } = props;
   const desktop = useMediaQuery('(min-width: 1280px)');
-  const tablet = useMediaQuery('(max-width: 960px)');
-  const laptop = useMediaQuery('(max-width: 1200px)');
+  const mobile = useMediaQuery('(max-width: 640px)');
   const [value, setValue] = useState(0);
+
   const settings = {
     dots: false,
     infinite: false,
     arrows: true,
     speed: 500,
-    slidesToShow: match ? 1 : desktop ? 3 : laptop ? 2 : 1,
-    slidesToScroll: 1
+    slidesToShow: mobile ? 1 : desktop ? 3 : 2,
+    slidesToScroll: mobile ? 1 : 2
   };
 
   const handleChange = (event, newValue) => {
@@ -72,22 +73,24 @@ export default function FilterTabs(props) {
         </Tabs>
       </Box>
       <TabPanel className="tab-panel" value={value} index={0}>
-        <Typography component="h2" variant='h6' className='main-bg' sx={{display: 'flex', justifyContent: 'center', width: '100px', borderRadius: '5px'}}>Novo</Typography>
+        <Typography component="label" variant='h6' className='main-bg' sx={{display: 'flex', justifyContent: 'center', width: '100px', borderRadius: '5px', ml: 1}}>Novo</Typography>
         <Slider {...settings}>
           {portfolioImagesProps?.images.slice(0, 1).map((image) => image[Object.keys(image)[0]].slice(0, 6).map((item, index) => (
-            <Box key={index} sx={{width: '100%', p: 1}}>
+            <Box key={index} sx={{width: '100%', height: '300px', maxHeight: '300px', p: 1, position: 'relative', overflow: 'hidden'}}>
               <Image
-                width={match ? 280 : 480}
-                height={match ? 370 : 640}
+                width={item.width}
+                height={item.height}
                 src={`${item.imgPath}?w=333&auto=format`}
                 srcSet={`${item.imgPath}?w=333&auto=format&dpr=2 2x`}
                 alt={item.alt}
-                loading="lazy"
+                priority
+                layout="responsive"
               />
             </Box>
           )))}
         </Slider>
-        <ImageMasonry tab={0} images={portfolioImagesProps.images} match={match}/>
+        <Box sx={{py: 5}}></Box>
+        <ImageMasonry tab={0} images={portfolioImagesProps.images} match={match} />
       </TabPanel>
       <TabPanel className="tab-panel" value={value} index={1}>
         <ImageMasonry tab={1} images={portfolioImagesProps.images} match={match}/>

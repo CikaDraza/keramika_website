@@ -7,12 +7,13 @@ import Image from "next/image";
 import { Button, Modal, useMediaQuery } from "@mui/material";
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Masonry from '@mui/lab/Masonry';
+import Zoom from "@mui/material/Zoom";
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  width: 400,
+  minWidth: 300,
   transform: 'translate(-50%, -50%)',
   bgcolor: 'background.paper',
   boxShadow: 24,
@@ -38,6 +39,7 @@ function ChildModal({ item }) {
         open={open}
         onClose={handleClose}
         closeAfterTransition
+        sx={{zIndex: 99999}}
       >
         <Box sx={{ ...style}}>
           <Image
@@ -47,6 +49,7 @@ function ChildModal({ item }) {
             srcSet={`${item.imgPath}?w=333&auto=format&dpr=2 2x`}
             alt={item.alt}
             loading="lazy"
+            layout="responsive"
           />
         </Box>
       </Modal>
@@ -57,24 +60,23 @@ function ChildModal({ item }) {
 export default function ImageMasonry({ match, images, tab }) {
 
   return (
-    <Box className="masonry-wraper" sx={{mt: 8, width: 500, minHeight: 393, '.MuiMasonry-root > div': {height: 'auto'}}}>
-      <Masonry columns={3} gap={0} spacing={0}>
-        {images.slice(tab, tab + 1).map((image) => image[Object.keys(image)[0]].map((item, index) => (
-          <ZoomContainer key={item.id} index={index}>
-            <ImageListItem>
-              <Image
-                width={item.width}
-                height={item.height}
-                src={`${item.imgPath}?w=333&auto=format`}
-                srcSet={`${item.imgPath}?w=333&auto=format&dpr=2 2x`}
-                alt={item.alt}
-                loading="lazy"
-              />
-              <ChildModal item={item} />
-            </ImageListItem>
-          </ZoomContainer>
-        )))}
-      </Masonry>
-    </Box>
+    <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+      {images.slice(tab, tab + 1).map((image) => image[Object.keys(image)[0]].map((item, index) => (
+        <Zoom key={item.id} in={true} index={index}>
+          <Box sx={{position: 'relative', width: '100%', maxWidth: '100%',
+            overflow: 'hidden'}}>
+            <Image
+              src={item.imgPath}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+              layout="responsive"
+              priority
+            />
+            <ChildModal item={item} />
+          </Box>
+        </Zoom>
+      )))}
+    </Masonry>
   );
 }

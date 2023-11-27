@@ -91,64 +91,64 @@ const portfolioImages = {
           imgPath: '/images/services/bathroom/kupatilo2.jpg', alt: 'wc keramika', id:111, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo4.jpg', alt: 'plavo bele plocice kupatilo', id:444, height: 360, width: 480
+          imgPath: '/images/services/bathroom/kupatilo4.jpg', alt: 'plavo bele plocice kupatilo', id:112, height: 360, width: 480
         },
         {
-          imgPath: '/images/services/renovation/adaptacija2.2.jpg', alt: 'adapttacija kupatila', id:444, height: 640, width: 480
+          imgPath: '/images/services/renovation/adaptacija2.2.jpg', alt: 'adapttacija kupatila', id:113, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/renovation/adaptacija2.3.jpg', alt: 'adapttacija kupatila', id:444, height: 640, width: 480
+          imgPath: '/images/services/renovation/adaptacija2.3.jpg', alt: 'adapttacija kupatila', id:114, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/renovation/adaptacija3.7.jpg', alt: 'adapttacija kupatila', id:444, height: 360, width: 640
+          imgPath: '/images/services/renovation/adaptacija3.7.jpg', alt: 'adapttacija kupatila', id:115, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/renovation/adaptacija4.5.jpg', alt: 'adapttacija kupatila', id:444, height: 360, width: 640
+          imgPath: '/images/services/renovation/adaptacija4.5.jpg', alt: 'adapttacija kupatila', id:116, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/renovation/adaptacija4.jpg', alt: 'adapttacija kupatila', id:444, height: 640, width: 480
+          imgPath: '/images/services/renovation/adaptacija4.jpg', alt: 'adapttacija kupatila', id:117, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/renovation/adaptacija5.jpg', alt: 'adapttacija kupatila', id:444, height: 640, width: 480
+          imgPath: '/images/services/renovation/adaptacija5.jpg', alt: 'adapttacija kupatila', id:118, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/renovation/adaptacija6.jpg', alt: 'adapttacija kupatila', id:444, height: 480, width: 640
+          imgPath: '/images/services/renovation/adaptacija6.jpg', alt: 'adapttacija kupatila', id:119, height: 480, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo9.jpg', alt: 'renoviranje kupatila i tus kabine', id:999, height: 640, width: 480
+          imgPath: '/images/services/bathroom/kupatilo9.jpg', alt: 'renoviranje kupatila i tus kabine', id:911, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo10.jpg', alt: 'kupatilo keramicke plocice', id:1010, height: 1440, width: 2560
+          imgPath: '/images/services/bathroom/kupatilo10.jpg', alt: 'kupatilo keramicke plocice', id:912, height: 1440, width: 2560
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.4.jpg', alt: 'kupatilo mozaik', id:222, height: 960, width: 480
+          imgPath: '/images/services/bathroom/kupatilo3.4.jpg', alt: 'kupatilo mozaik', id:913, height: 960, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo5.jpg', alt: 'tus kabina', id:555, height: 480, width: 640
+          imgPath: '/images/services/bathroom/kupatilo5.jpg', alt: 'tus kabina', id:914, height: 480, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.5.jpg', alt: 'kupatilo mozaik', id:333, height: 360, width: 640
+          imgPath: '/images/services/bathroom/kupatilo3.5.jpg', alt: 'kupatilo mozaik', id:915, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo44.jpg', alt: 'kupatilo plocice', id:1111, height: 360, width: 640
+          imgPath: '/images/services/bathroom/kupatilo44.jpg', alt: 'kupatilo plocice', id:916, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo7.jpg', alt: 'kupatilo plocice crvene', id:777, height: 480, width: 480
+          imgPath: '/images/services/bathroom/kupatilo7.jpg', alt: 'kupatilo plocice crvene', id:917, height: 480, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo8.jpg', alt: 'renoviranje kupatila', id:888, height: 640, width: 480
+          imgPath: '/images/services/bathroom/kupatilo8.jpg', alt: 'renoviranje kupatila', id:918, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo6.jpg', alt: 'renoviranje tus kabine', id:666, height: 640, width: 480
+          imgPath: '/images/services/bathroom/kupatilo6.jpg', alt: 'renoviranje tus kabine', id:919, height: 640, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo1.1.jpg', alt: 'renoviranje tus kabine', id:667, height: 360, width: 640
+          imgPath: '/images/services/bathroom/kupatilo1.1.jpg', alt: 'renoviranje tus kabine', id:920, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo2.1.jpg', alt: 'renoviranje tus kabine', id:678, height: 780, width: 480
+          imgPath: '/images/services/bathroom/kupatilo2.1.jpg', alt: 'renoviranje tus kabine', id:921, height: 780, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo-kombinacija-tamne-svetle-plocice.jpg', alt: 'renoviranje tus kabine', id:679, height: 640, width: 480
+          imgPath: '/images/services/bathroom/kupatilo-kombinacija-tamne-svetle-plocice.jpg', alt: 'renoviranje tus kabine', id:923, height: 640, width: 480
         },
         {
           imgPath: '/images/services/bathroom/kupatilo2.4.jpg', alt: 'renoviranje tus kabine', id:680, height: 960, width: 640
@@ -157,19 +157,19 @@ const portfolioImages = {
           imgPath: '/images/services/bathroom/kupatilo3.1.jpg', alt: 'renoviranje tus kabine', id:681, height: 960, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.2.jpg', alt: 'renoviranje tus kabine', id:681, height: 960, width: 480
+          imgPath: '/images/services/bathroom/kupatilo3.2.jpg', alt: 'renoviranje tus kabine', id:682, height: 960, width: 480
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.3.jpg', alt: 'renoviranje tus kabine', id:682, height: 360, width: 640
+          imgPath: '/images/services/bathroom/kupatilo3.3.jpg', alt: 'renoviranje tus kabine', id:683, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.5.jpg', alt: 'renoviranje tus kabine', id:683, height: 360, width: 640
+          imgPath: '/images/services/bathroom/kupatilo3.5.jpg', alt: 'renoviranje tus kabine', id:684, height: 360, width: 640
         },
         {
-          imgPath: '/images/services/bathroom/kupatilo3.4.jpg', alt: 'renoviranje tus kabine', id:684, height: 960, width: 640
+          imgPath: '/images/services/bathroom/kupatilo3.4.jpg', alt: 'renoviranje tus kabine', id:685, height: 960, width: 640
         },
         {
-          imgPath: '/images/portfolio-carousell/toalet.jpg', alt: 'renoviranje tus kabine', id:684, height: 640, width: 480
+          imgPath: '/images/portfolio-carousell/toalet.jpg', alt: 'renoviranje tus kabine', id:686, height: 640, width: 480
         }
       ]
     },

@@ -77,25 +77,24 @@ export default function SurfaceAreaSlider({ tab }) {
   return (
     <Box sx={{ width: '100%' }}>
       <Grid container sx={{ marginBottom: 5 }} spacing={3} alignItems="center">
-          <Grid item xs={12} sx={{mb: 3}}>
-            <span className="tite-slider">Unesite broj kvadrata prostorije</span>
-          </Grid>
-          <Grid item xs={4}>
-          </Grid>
-          <Grid item xs={6}>
-            <Slider
-              marks={marks}
-              value={typeof value === 'number' ? value : 0}
-              onChange={handleSliderChange}
-              aria-label="Always visible"
-              defaultValue={0}
-              getAriaValueText={valuetext}
-              step={5}
-              valueLabelDisplay="on"
-            />
-            
-          </Grid>
-          <Grid item xs className='input-surface'>
+        <Grid item xs={12} sx={{mb: 3}}>
+          <span className="tite-slider">Unesite broj kvadrata prostorije</span>
+        </Grid>
+        <Grid item xs={12} md={4}>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Slider
+            marks={marks}
+            value={typeof value === 'number' ? value : 0}
+            onChange={handleSliderChange}
+            aria-label="Always visible"
+            defaultValue={0}
+            getAriaValueText={valuetext}
+            step={5}
+            valueLabelDisplay="on"
+          />
+        </Grid>
+        <Grid item xs className='input-surface'>
           <OutlinedInput
             value={value}
             size="small"
@@ -108,47 +107,49 @@ export default function SurfaceAreaSlider({ tab }) {
               type: 'number',
               'aria-labelledby': 'input-slider',
             }}
-        />
-          </Grid>
-          {
-            tab !== 1 &&
-            <>
-            <Grid item xs={6} sx={{mt: 3, mb: 3, pt: 0}}>
-              <span className="tite-slider">Izaberite prostoriju</span>
-            </Grid>
-            <Grid item xs className='select-rooms'>
-              <RoomSelect room={room} handleChangeRoom={handleChangeRoom}/>
-            </Grid>
-            </>
-          }
+          />
+        </Grid>
       </Grid>
-        {
-          tab === 0 &&
-          <Box>
-            {
-              value > 0 && room !== '' &&
-              <PriceTable surfaceValue={value} room={room} tab={tab} />
-            }
-          </Box>
-        }
-        {
-          tab === 1 &&
-          <Box>
-            {
-              valueTwo > 0 &&
-              <PriceTable surfaceValue={valueTwo} room={'kupatilo'} tab={tab} />
-            }
-          </Box>
-        }
-        {
-          tab === 2 &&
-          <Box>
-            {
-              valueThree > 0 && room !== '' &&
-              <PriceTable surfaceValue={valueThree} room={room} tab={tab} />
-            }
-          </Box>
-        }
+      <Box>
+      {
+        tab !== 1 &&
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6} sx={{mt: 3, mb: 3, pt: 0}}>
+            <span className="tite-slider">Izaberite prostoriju</span>
+          </Grid>
+          <Grid item xs className='select-rooms'>
+            <RoomSelect room={room} handleChangeRoom={handleChangeRoom}/>
+          </Grid>
+        </Grid>
+      }
+      {
+        tab === 0 &&
+        <Box>
+          {
+            value > 0 && room !== '' &&
+            <PriceTable surfaceValue={value} room={room} tab={tab} />
+          }
+        </Box>
+      }
+      {
+        tab === 1 &&
+        <Box>
+          {
+            valueTwo > 0 &&
+            <PriceTable surfaceValue={valueTwo} room={'kupatilo'} tab={tab} />
+          }
+        </Box>
+      }
+      {
+        tab === 2 &&
+        <Box>
+          {
+            valueThree > 0 && room !== '' &&
+            <PriceTable surfaceValue={valueThree} room={room} tab={tab} />
+          }
+        </Box>
+      }
+      </Box>
     </Box>
   );
 }

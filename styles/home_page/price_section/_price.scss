@@ -2,7 +2,7 @@ section.price {
   padding: 0 30px 150px;
 
   @include mobile {
-    padding: 50px 30px;
+    padding: 50px 10px;
   }
 
   .wrapper {
@@ -263,6 +263,9 @@ section#price-calc {
   .input-surface {
     padding-top: 0;
     padding-left: 45px;
+    @include mobile {
+      padding-left: 0;
+    }
   }
   .tite-slider {
     border-left: 4px solid $color--orange;

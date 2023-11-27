@@ -29,6 +29,9 @@ export default function PricePage() {
 }
 
 const priceList = {
+  h1: "Naše cene",
+  h1_p1: `Pogledajte cene, izaberite planove cena koji vam odgovaraju. Ovde možete sa našim [LINK] izračunati okvirnu cenu u odnosu na vašu kvadraturu prostorije.`,
+  h1_p2: "Morate znati da troškovi radova variraju, u zavisnosti od veličine i složenosti projekta. Cene se takođe menjaju od podova, do kupatila i kuhinja",
   h2: "Kako formiramo cene",
   subHeading: "Planovi keramičarskih usluga",
   p1: "Izaberite planove cena koji vam odgovaraju.",
