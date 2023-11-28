@@ -7,11 +7,10 @@ import useMediaQuery from '../src/components/useMediaQuery';
 import HomeLayout from '../src/layout/Home/HomeLayout';
 import axios from 'axios';
 
-
+const YOUTUBE_PLAYLIST = process.env.YOUTUBE_PLAYLIST;
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY2;
 
  export async function getServerSideProps() {
-  const YOUTUBE_PLAYLIST = process.env.YOUTUBE_PLAYLIST;
-  const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY2;
   const { data } = await axios(`${YOUTUBE_PLAYLIST}?part=snippet&playlistId=PLss-O45xpb4ePG5XbxL5uOAyqyvBk52Tl&key=${YOUTUBE_API_KEY}`);
 
   return {
@@ -57,7 +56,7 @@ const heroSection = {
   p: "Vreme je da tražite keramičara? Često zna da bude naporno i stresno. Svi će vam reći koliko je teško naći dobrog i poštenog keramičara. Zato što nemaju dobru preporuku, nisu potražili pomoć kod nas. Da, mi radimo sve keramičarske radove koje možete da zamislite!",
   carouselDesktopWidth: 640,
   carouselDesktopHeight: 450,
-  carouselMobileWidth: 300,
+  carouselMobileWidth: 350,
   carouselMobileHeight: 220,
   carouselImages: [
     {
