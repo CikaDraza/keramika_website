@@ -5,16 +5,18 @@ import Tiles from '../src/components/Icons/tiles';
 import Pipes from '../src/components/Icons/pipes';
 import useMediaQuery from '../src/components/useMediaQuery';
 import HomeLayout from '../src/layout/Home/HomeLayout';
+import axios from 'axios';
 
-const YOUTUBE_PLAYLIST_ID = process.env.YOUTUBE_PLAYLIST_ID;
-const API_KEY = process.env.API_KEY;
+
 
  export async function getServerSideProps() {
-  const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${YOUTUBE_PLAYLIST_ID}&key=${API_KEY}`);
-  const data = await response.json();
+  const YOUTUBE_PLAYLIST = process.env.YOUTUBE_PLAYLIST;
+  const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY2;
+  const { data } = await axios(`${YOUTUBE_PLAYLIST}?part=snippet&playlistId=PLss-O45xpb4ePG5XbxL5uOAyqyvBk52Tl&key=${YOUTUBE_API_KEY}`);
+
   return {
     props: {
-      data
+      data,
     }
   };
 }
