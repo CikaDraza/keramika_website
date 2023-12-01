@@ -10,7 +10,7 @@ router.post(async (req, res) => {
     service: 'gmail',
     auth: {
       user: "drazic.milan@gmail.com",
-      pass: process.env.PASSWORD,
+      pass: "dxko xmrp fqfz tdkd",
     },
   });
 

@@ -11,7 +11,7 @@ export default function Stone(props) {
     arr.forEach(element => element.style.strokeWidth = '2');
     arr.forEach(element => element.style.fill = 'none');
     return () => {
-      console.log('nesto je poslo po zlu');
+      console.info('keramicarske usluge Lale');
     }
   }, [pathFill]);
 
