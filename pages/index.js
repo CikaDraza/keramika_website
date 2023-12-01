@@ -5,12 +5,12 @@ import Tiles from '../src/components/Icons/tiles';
 import Pipes from '../src/components/Icons/pipes';
 import useMediaQuery from '../src/components/useMediaQuery';
 import HomeLayout from '../src/layout/Home/HomeLayout';
-import axios from 'axios';
+// import axios from 'axios';
 
 const YOUTUBE_PLAYLIST = process.env.YOUTUBE_PLAYLIST;
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY2;
 
- export async function getServerSideProps() {
+export async function getServerSideProps() {
   // const { data } = await axios.get(`${YOUTUBE_PLAYLIST}?part=snippet&playlistId=PLss-O45xpb4ePG5XbxL5uOAyqyvBk52Tl&key=${YOUTUBE_API_KEY}`);
   const data = [];
   return {
