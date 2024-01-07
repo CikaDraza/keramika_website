@@ -27,7 +27,8 @@
     "react-dom": "^18.1.0",
     "react-slick": "^0.29.0",
     "react-swipeable-views": "^0.14.0",
-    "sass": "^1.35.2"
+    "sass": "^1.35.2",
+    "@vercel/analytics": "^0.1.5"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^2.0.1",
