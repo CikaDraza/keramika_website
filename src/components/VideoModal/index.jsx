@@ -4,7 +4,7 @@ import Image from 'next/dist/client/image';
 
 export default function VideoModal({ open, close, data, match }) {
   const [isLoadedBrowser, setIsLoadedBrowser] = useState(false);
-  const [getIds, setGetIds] = useState('IAR1AfS6_Ug');
+  const [getIds, setGetIds] = useState('qbgfwJlrJCE');
 
   function handleCloseModal() {
     close();
@@ -29,7 +29,7 @@ export default function VideoModal({ open, close, data, match }) {
           </div>
           <div className="video-modal__video-player">
             <div className="player">
-              <iframe allowFullScreen height={match ? "200px" : "500px"} width="100%" src={`https://www.youtube.com/embed/${getIds}`} type="video/mp4"></iframe>
+              <iframe allowFullScreen height={match ? "200px" : "350px"} width="100%" src={`https://www.youtube.com/embed/${getIds}`} type="video/mp4"></iframe>
             </div>
             <div className="player__lists">
               {

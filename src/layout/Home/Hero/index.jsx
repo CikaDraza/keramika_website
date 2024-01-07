@@ -42,7 +42,7 @@ export default function HeroSection({ match, heroSectionProps, data }) {
                   {
                     !match && (
                       <button className="buttons__action action--blue">
-                        <Link href="tel:+381605354777">
+                        <Link href="tel:+38162201787">
                           <a>
                             <Phone width={25} fill="white" />
                             <span>Pozovite</span>

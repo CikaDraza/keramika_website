@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import useMediaQuery from '../../components/useMediaQuery';
 import CheckIcon from '../../components/Icons/CheckIcon';
 import Link from 'next/link';
@@ -8,12 +10,21 @@ export default function Prices(props) {
   const { priceListProps, priceTableProps } = props;
   const match = useMediaQuery('(max-width: 768px)');
 
+  const tekst = priceListProps.h1_p1;
+
+    // Kreiranje JSX elementa za interni link
+    const link = <a href="#price-calc">kalkulatorom</a>;
+
+    // Zamena placeholdera u tekstu sa stvarnim linkom
+    const izmenjeniTekst = tekst.replace('[LINK]', ReactDOMServer.renderToString(link));
+
   return (
     <section className="price-section">
       <div className="wrapper">
         <div className="price-section__title">
-          <h1>Naše cene</h1>
-          <p>Iskoristite naše specijalne ponude! Keramičarski radovi, renoviranje kupatila i vodoinstalacije</p>
+          <h1>{priceListProps.h1}</h1>
+          <p dangerouslySetInnerHTML={{ __html: izmenjeniTekst }} />
+          <p>{priceListProps.h1_p2}</p>
         </div>
         <div className="price-section__content">
           <section className="price">
@@ -127,19 +138,19 @@ export default function Prices(props) {
             </div>      
           </section>
           <section id='price-calc' className='price'>
-                <div className='wrapper'>
-                  <div className="price-section__title">
-                    <h2>Kalkulator cena</h2>
-                    <p>Kalkulator okvirno računa cene i dodaje stavke koje bi bilo poželjno uraditi za izabrane radove.</p>
-                  </div>
-                  <div className='price-row'>
-                    <div className='price-column'>
-                      <div className="price-section__calculator">
-                        <PriceCalculator />
-                      </div>
-                    </div>
+            <div className='wrapper'>
+              <div className="price-section__title">
+                <h2>Kalkulator cena</h2>
+                <p>Kalkulator okvirno računa cene i dodaje stavke koje bi bilo poželjno uraditi za izabrane radove.</p>
+              </div>
+              <div className='price-row'>
+                <div className='price-column'>
+                  <div className="price-section__calculator">
+                    <PriceCalculator />
                   </div>
                 </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>

@@ -357,7 +357,7 @@ export default function ContactForm({ match }) {
             backgroundColor: (t) =>
               t.palette.primary.blue
            } : {
-             m: 10, ml: 5, mr: -5,
+             m: 10, ml: 0, mr: 0,
             backgroundColor: (t) =>
               t.palette.primary.blue
           }}
@@ -369,8 +369,8 @@ export default function ContactForm({ match }) {
             </li>
             <li>
               <StrongComponent>Telefon</StrongComponent><br/>
-              +381 (0) 60 555 333<br />
-              <span style={{display: 'flex', alignItems: 'center'}}><Viber style={{marginRight: '10px'}} width={20} height={20} fill={'#fff'}/> +381 (0) 60 555 333</span>
+              +381 (0) 62 201 787<br />
+              <span style={{display: 'flex', alignItems: 'center'}}><Viber style={{marginRight: '10px'}} width={20} height={20} fill={'#fff'}/> +381 (0) 62 201 787</span>
             </li>
             <li>
               <StrongComponent>Email</StrongComponent><br/>
@@ -386,17 +386,17 @@ export default function ContactForm({ match }) {
           </UlComponent>
           <UlSocialIcons>
             <li>
-               <Link  href="https://www.facebook.com/profile.php?id=100063739952191" passHref>
+               <Link  href="#" passHref>
                   <FacebookSvg className="nav__icon--facebook" width={20} height={20} />                 
                 </Link>
             </li>
             <li>
-                <Link href="https://www.youtube.com/channel/UC3u9C_wdhIn81JGnrmMzWrA" passHref>
+                <Link href="https://www.youtube.com/channel/UCwIso2xGZwgN3lgjP8oMPVw" passHref>
                   <YouTubeSvg className="nav__icon--youtube" width={25} height={25} />
                 </Link>
             </li>
             <li>
-                <Link href="https://www.instagram.com/zivojinovkeramika/">
+                <Link href="#" passHref>
                   <InstaSvg className="nav__icon--insta" width={20} height={20} />
                 </Link>
             </li>

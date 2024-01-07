@@ -55,7 +55,7 @@ export default function Header(props) {
                 </Link>
               </li>
               <li className="nav__item">
-                <Link href="https://www.instagram.com/keramikazivojinov/" passHref>
+                <Link href="https://instagram.com/panteleymon_obj704?igshid=OGQ5ZDc2ODk2ZA==" passHref>
                   <a target="_blank">
                     <InstaSvg className="nav__icon--insta" width={20} height={20} />
                   </a>

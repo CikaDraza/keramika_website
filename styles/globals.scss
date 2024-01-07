@@ -40,16 +40,6 @@ body {
 }
 .slick-list{
   overflow: hidden;
-  width: 1280px;
-  @include laptop {
-    width: 960px;
-  }
-  @include tablet {
-    width: 960px;
-  }
-  @include mobile {
-    width: 300px;
-  }
 }
 .slick-track {
   display: flex;

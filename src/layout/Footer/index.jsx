@@ -74,8 +74,8 @@ export default function Footer(props) {
             <div className="footer-top__column">
               <h6>Kontakt</h6>
               <ul>
-                <li>Stevana Sremca 89k, Sremska Mitrovica 22000, Srbija</li>
-                <li>+381 {'(0)'} 60 555 333</li>
+                <li>Stevana Sremca 4k, Sremska Mitrovica 22000, Srbija</li>
+                <li>+381 {'(0)'} 62 201 787</li>
                 <li>keramicar.lale@keramika.com</li>                
               </ul>
             </div>
@@ -137,17 +137,17 @@ export default function Footer(props) {
             </a>
           </li>
           <li>
-          <a href="https://www.facebook.com/keramika.zivojinovkeramika" rel="noreferrer" target="_blank">
+          <a href="#" rel="noreferrer" target="_blank">
             <Messenger width={25} heigth={25} fill="white"/>
           </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/keramikazivojinov/" rel="noreferrer" target="_blank">
+            <a href="#" rel="noreferrer" target="_blank">
               <InstaSvg className="footer-mob-icon" width={25} height={25} />
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/channel/UC3u9C_wdhIn81JGnrmMzWrA" rel="noreferrer" target="_blank">
+            <a href="https://youtu.be/8kKUTYxfA6s" rel="noreferrer" target="_blank">
               <YouTube width={25} height={25} fill="white"/>
             </a>
           </li>

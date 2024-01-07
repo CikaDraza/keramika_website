@@ -5,16 +5,16 @@ import Tiles from '../src/components/Icons/tiles';
 import Pipes from '../src/components/Icons/pipes';
 import useMediaQuery from '../src/components/useMediaQuery';
 import HomeLayout from '../src/layout/Home/HomeLayout';
+import axios from 'axios';
 
-const YOUTUBE_PLAYLIST_ID = process.env.YOUTUBE_PLAYLIST_ID;
-const API_KEY = process.env.API_KEY;
+const YOUTUBE_PLAYLIST = process.env.YOUTUBE_PLAYLIST;
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY2;
 
- export async function getServerSideProps() {
-  const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${YOUTUBE_PLAYLIST_ID}&key=${API_KEY}`);
-  const data = await response.json();
+export async function getServerSideProps() {
+  const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLss-O45xpb4ePG5XbxL5uOAyqyvBk52Tl&key=AIzaSyACCjP-hNmp4ysj7kfNvmcFfUs_uFnK4Bs`);
   return {
     props: {
-      data
+      data,
     }
   };
 }
@@ -55,7 +55,7 @@ const heroSection = {
   p: "Vreme je da tražite keramičara? Često zna da bude naporno i stresno. Svi će vam reći koliko je teško naći dobrog i poštenog keramičara. Zato što nemaju dobru preporuku, nisu potražili pomoć kod nas. Da, mi radimo sve keramičarske radove koje možete da zamislite!",
   carouselDesktopWidth: 640,
   carouselDesktopHeight: 450,
-  carouselMobileWidth: 300,
+  carouselMobileWidth: 350,
   carouselMobileHeight: 220,
   carouselImages: [
     {
