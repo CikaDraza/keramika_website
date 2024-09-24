@@ -127,7 +127,7 @@ export default function SurfaceAreaSlider({ tab }) {
   return (
     <Box sx={{ width: '100%' }}>
       {
-        tab !== 1 &&
+        tab === 0 &&
         <Grid sx={{ marginBottom: 5 }} container spacing={3}>
           <Grid item xs={12} md={6} sx={{mt: 3, mb: 3, pt: 0}}>
             <span className="title-slider">Izaberite tip pločice</span>

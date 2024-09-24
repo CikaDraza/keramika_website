@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Box, Button, FormHelperText, InputBase } from '@mui/material';
+import { Box, Button, FormHelperText, InputBase, Typography } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 
 const InputContainer = styled('div')(({ theme }) => ({
@@ -146,7 +146,7 @@ export default function PriceTable({ surfaceValue, room, tilePackageValue, tileP
   return (
     <>
       <TableContainer component={Paper}>
-        <Table>
+        <Table sx={{ minWidth: 700 }}>
           <TableHead>
             <TableRow>
               <TableCell>Prostorija</TableCell>
@@ -218,6 +218,9 @@ export default function PriceTable({ surfaceValue, room, tilePackageValue, tileP
           </TableBody>
         </Table>
       </TableContainer>
+      <Typography sx={{pt: 1}}>
+        Za više informacija o pločicama iz Zorka keramike, posetite njihov <a href="https://www.zorka-keramika.rs/">katalog</a>
+      </Typography>
       <Box component="form" onSubmit={handleSubmitCupon} sx={{width: {xs: '100%', sm: 'auto'}, '& a': {textDecoration: 'none'}, display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', mt: 5}}>
         <InputContainer>
           <StyledInputBase
