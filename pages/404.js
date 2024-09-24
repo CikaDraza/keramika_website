@@ -21,11 +21,9 @@ export default function Error() {
         <h2 className="error-page__status">
           {status.statusCode} | {statusCodes[status.statusCode]}
         </h2>
-        <div className="error-page__btn buttons">
+        <div className="buttons">
           <button className="buttons__action action--blue">
-          <Link href="/" passHref>
-            <span>Nazad na sigurno</span>
-          </Link>
+            <Link href="/">Nazad na sigurno</Link>
           </button>
         </div>
       </div>

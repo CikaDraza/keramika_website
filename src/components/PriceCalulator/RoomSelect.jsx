@@ -4,7 +4,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function RoomSelect({ room, handleChangeRoom}) {
+export default function RoomSelect({ room, handleChangeRoom }) {
   
   return (
     <div>

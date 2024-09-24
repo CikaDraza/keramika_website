@@ -92,8 +92,8 @@ export default function Footer(props) {
               <h6>Korisni Linkovi</h6>
                 <ul>
                   <li><Link href="/usluge">Usluge</Link></li>
-                  <li><Link href="/cenovnik">Cenovnik</Link></li>
-                  <li><Link href="/galerija">Galerija</Link></li>
+                  <li><Link href="/cene">Cenovnik</Link></li>
+                  <li><Link href="/radovi">Galerija</Link></li>
                   <li><Link href="/kontakt">Kontakt</Link></li>                
                 </ul>
             </div>

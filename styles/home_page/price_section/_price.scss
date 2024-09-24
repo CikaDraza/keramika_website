@@ -267,7 +267,17 @@ section#price-calc {
       padding-left: 0;
     }
   }
-  .tite-slider {
+  .input-surface-door, .input-room-height {
+    padding-top: 0;
+    padding-left: 10px;
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+  .input-surface-window {
+    padding-left: 45px;
+  }
+  .title-slider {
     border-left: 4px solid $color--orange;
     padding: 14px 0 12px 15px;
   }

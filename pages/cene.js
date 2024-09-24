@@ -29,7 +29,7 @@ export default function PricePage() {
 }
 
 const priceList = {
-  h1: "Naše cene",
+  h1: "Lepljenje pločica, cene",
   h1_p1: `Pogledajte cene, izaberite planove cena koji vam odgovaraju. Ovde možete sa našim [LINK] izračunati okvirnu cenu u odnosu na vašu kvadraturu prostorije.`,
   h1_p2: "Morate znati da troškovi radova variraju, u zavisnosti od veličine i složenosti projekta. Cene se takođe menjaju od podova, do kupatila i kuhinja",
   h2: "Kako formiramo cene",
@@ -41,7 +41,7 @@ const priceList = {
   cards: [
     {h3: "Lepljenje pločica", cenaRusenje: "", cenaUsluge: "15", uslugaValuta: "€", uslugaJedinica: "po kvadratnom metru", cenaSanitarije: "Uklanjanje i postavljanje sanitarije 150€ okvirno", cenaKosuljica: "izrada košuljice 50€ okvirno", cenaHidroizolacija: "Hidroizolacija 50€ okvirno", cenaMalterisanje: "", uslugaJedinica: "po kvadratnom metru", cenaDeponija: "Iznošenje, i odvoženje šuta na deponiju 50€"},
     {h3: "Renoviranje kupatila", cenaUsluge: "60", uslugaJedinica: "po kvadratnom metru", uslugaValuta: "€", cenaRusenje: "Rušenje starih pločica 150€", cenaSanitarije: "", cenaVodaKanalizacija: "Vodoinstalaterski radovi gde spadaju voda i kanalizacija 300€ okvirno", cenaKosuljica: "izrada košuljice 50€ okvirno", cenaHidroizolacija: "Hidroizolacija 50€ okvirno", cenaMalterisanje: "", cenaKrpljenje: "Popunjavanje neravnina i rupa na zidovima 100€ okvirno", cenaDeponija: "Iznošenje, i odvoženje šuta na deponiju 50€"},
-    {h3: "Ukrasni Kamen", cenaUsluge: "15", uslugaJedinica: "po kvadratnom metru", uslugaValuta: "€", cenaDekoKamen: "Postavljanje dekorativnog kamena 20€/m2",  cenaKamenStaze: "Postavljanje kamena za staze 10€/m2", cenaGerovanje: "Gerovanje ivica kamena 15€/m2 okvirno", cenaKrpljenje: "Popunjavanje neravnina i rupa na zidovima 100€ okvirno", cenaMalterisanje: "Ako je potrebno malterisanje i ravnajući sloj 150€ okvirno", cenaDeponija: "Iznošenje, i odvoženje šuta na deponiju 50€"}
+    {h3: "Ukrasni Kamen", cenaUsluge: "16", uslugaJedinica: "po kvadratnom metru", uslugaValuta: "€", cenaDekoKamen: "Postavljanje dekorativnog kamena 20€/m2",  cenaKamenStaze: "Postavljanje kamena za staze 10€/m2", cenaGerovanje: "Gerovanje ivica kamena 15€/m2 okvirno", cenaKrpljenje: "Popunjavanje neravnina i rupa na zidovima 100€ okvirno", cenaMalterisanje: "Ako je potrebno malterisanje i ravnajući sloj 150€ okvirno", cenaDeponija: "Iznošenje, i odvoženje šuta na deponiju 50€"}
   ],
   actionBtn: "Kontaktirajte nas" 
 }

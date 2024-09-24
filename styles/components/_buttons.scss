@@ -49,8 +49,7 @@
       background-color: rgb(255, 255, 255);
       transform: rotate(-45deg);
       top: -50%;
-      left: -110%;
-              
+      left: -110%;     
     }
 
     &:hover::before {
@@ -111,8 +110,14 @@
 
   .action--blue {
     background-color: $color--blue;
+    font-weight: $font--weight-bold;
     a {
       color: $color--white;
+    }
+    &:hover {
+      a {
+        color: $color--blue;
+      }
     }
   }
 }
