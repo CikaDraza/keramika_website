@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Box, Button, FormHelperText, InputBase, Typography } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
+import Link from 'next/link';
 
 const InputContainer = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -219,7 +220,7 @@ export default function PriceTable({ surfaceValue, room, tilePackageValue, tileP
         </Table>
       </TableContainer>
       <Typography sx={{pt: 1}}>
-        Za više informacija o pločicama iz Zorka keramike, posetite njihov <a href="https://www.zorka-keramika.rs/">katalog</a>
+        Za više informacija o pločicama iz Zorka keramike, posetite njihov <Link href="https://www.zorka-keramika.rs/">katalog</Link>
       </Typography>
       <Box component="form" onSubmit={handleSubmitCupon} sx={{width: {xs: '100%', sm: 'auto'}, '& a': {textDecoration: 'none'}, display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', mt: 5}}>
         <InputContainer>

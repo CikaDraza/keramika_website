@@ -9,19 +9,19 @@ export default function Drawer( { handleOpenDrawer, open }) {
      <nav className={!open ? "nav-drawer" : "nav-drawer nav-drawer--active"}>
       <ul className="nav-drawer__list">
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/"><a className={router.pathname == "/" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Naslovna</a></Link>
+          <Link href="/" passHref><span className={router.pathname == "/" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Naslovna</span></Link>
         </li>
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/cene"><a className={router.pathname == "/cene" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Cene</a></Link>
+          <Link href="/cene" passHref><span className={router.pathname == "/cene" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Cene</span></Link>
         </li>
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/usluge"><a className={router.pathname == "/usluge" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Usluge</a></Link>
+          <Link href="/usluge" passHref><span className={router.pathname == "/usluge" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Usluge</span></Link>
         </li>
         <li className={router.pathname == "/radovi" ? "nav-drawer__link nav-drawer__link--active nav-drawer__item" : "nav-drawer__link nav-drawer__item"} onClick={handleOpenDrawer}>
           <Link href="/radovi">Rani Radovi</Link>
         </li>
         <li className="nav-drawer__item" onClick={handleOpenDrawer}>
-          <Link href="/kontakt"><a className={router.pathname == "/kontakt" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Kontakt</a></Link>
+          <Link href="/kontakt" passHref><span className={router.pathname == "/kontakt" ? "nav-drawer__link nav-drawer__link--active" : "nav-drawer__link"}>Kontakt</span></Link>
         </li>
       </ul>
     </nav>

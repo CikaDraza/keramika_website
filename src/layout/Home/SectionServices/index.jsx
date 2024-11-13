@@ -21,7 +21,7 @@ export default function SectionServices(props) {
           {
             // first column
             serviceProps.servicesCards.slice(0, 2).map(card => (
-              <a href={`/usluge/${card.path}`} key={card.path} className="card" style={serviceProps.cardsDimension}>
+              <Link passHref href={`/usluge/${card.path}`} key={card.path} className="card" style={serviceProps.cardsDimension}>
                 <div className="card__media">
                   {card.icon}
                 </div>
@@ -36,7 +36,7 @@ export default function SectionServices(props) {
                 <div className="card__action">
                   detaljnije...
                 </div>
-              </a>
+              </Link>
 
             ))
           }
@@ -45,7 +45,7 @@ export default function SectionServices(props) {
           {
             // second column
             serviceProps.servicesCards.slice(2, 4).map(card => (
-              <a href={`/usluge/${card.path}`} key={card.path} className="card" style={serviceProps.cardsDimension}>
+              <Link passHref href={`/usluge/${card.path}`} key={card.path} className="card" style={serviceProps.cardsDimension}>
                 <div className="card__media">
                   {card.icon}
                 </div>
@@ -60,7 +60,7 @@ export default function SectionServices(props) {
                 <div className="card__action">
                   detaljnije...
                 </div>
-              </a>
+              </Link>
 
             ))
           }

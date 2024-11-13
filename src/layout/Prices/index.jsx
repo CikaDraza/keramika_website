@@ -13,7 +13,7 @@ export default function Prices(props) {
   const tekst = priceListProps.h1_p1;
 
     // Kreiranje JSX elementa za interni link
-    const link = <a href="#price-calc">kalkulatorom</a>;
+    const link = <Link href="#price-calc">kalkulatorom</Link>;
 
     // Zamena placeholdera u tekstu sa stvarnim linkom
     const izmenjeniTekst = tekst.replace('[LINK]', ReactDOMServer.renderToString(link));
@@ -133,7 +133,7 @@ export default function Prices(props) {
                 </div>
               </div>
               <div className="price__action">
-              <Link href="/kontakt"><a>{priceListProps.actionBtn}</a></Link>
+              <Link href="/kontakt" passHref>{priceListProps.actionBtn}</Link>
               </div>
             </div>      
           </section>

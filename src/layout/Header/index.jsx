@@ -23,49 +23,41 @@ export default function Header(props) {
       <div className="wrapper">
         <div className="header__container">
           <nav className="nav">
-            <Link href="/">
-              <a className='logo-link'>
+            <Link href="/" className='logo-link' passHref>
                 <Image src='/logo/logo_lale.png' width={match ? logoProps.mobileWidth : logoProps.desktopWidth} height={match ? logoProps.mobileHeight : logoProps.desktopHeight} alt='Logo' className="nav__logo"/>
                 <p>Keramičar Lale</p>
-              </a>
             </Link>
             <ul className="nav__list">
               <li className="nav__item">
-                <Link href="/"><a className={router.pathname == "/" ? "nav__link nav__link--active" : "nav__link"}>Naslovna</a></Link>
+                <Link href="/" passHref><span className={router.pathname == "/" ? "nav__link nav__link--active" : "nav__link"}>Naslovna</span></Link>
               </li>
               <li className="nav__item">
-                <Link href="/cene"><a className={router.pathname == "/cene" ? "nav__link nav__link--active" : "nav__link"}>Cene</a></Link>
+                <Link href="/cene" passHref><span className={router.pathname == "/cene" ? "nav__link nav__link--active" : "nav__link"}>Cene</span></Link>
               </li>
               <li className="nav__item">
-                <Link href="/usluge"><a className={router.pathname == "/usluge" ? "nav__link--active" : "nav__link"}>Usluge</a></Link>
+                <Link href="/usluge" passHref><span className={router.pathname == "/usluge" ? "nav__link--active" : "nav__link"}>Usluge</span></Link>
               </li>
               <li className="nav__item">
-                <Link href="/radovi"><a className={router.pathname == "/radovi" ? "nav__link--active" : "nav__link"}>Rani Radovi</a></Link>
+                <Link href="/radovi" passHref><span className={router.pathname == "/radovi" ? "nav__link--active" : "nav__link"}>Rani Radovi</span></Link>
               </li>
               <li className="nav__item">
-                <Link href="/kontakt"><a className={router.pathname == "/kontakt" ? "nav__link--active" : "nav__link"}>Kontakt</a></Link>
+                <Link href="/kontakt" passHref><span className={router.pathname == "/kontakt" ? "nav__link--active" : "nav__link"}>Kontakt</span></Link>
               </li>
             </ul>
             <ul className="nav__list">
               <li className="nav__item">
                 <Link href="https://www.facebook.com/profile.php?id=100063739952191" passHref>
-                  <a target="_blank" >
-                    <FacebookSvg className="nav__icon--facebook" width={20} height={20} />                 
-                  </a>
+                    <FacebookSvg className="nav__icon--facebook" width={20} height={20} />
                 </Link>
               </li>
               <li className="nav__item">
                 <Link href="https://instagram.com/panteleymon_obj704?igshid=OGQ5ZDc2ODk2ZA==" passHref>
-                  <a target="_blank">
                     <InstaSvg className="nav__icon--insta" width={20} height={20} />
-                  </a>
                 </Link>
               </li>
               <li className="nav__item">
                 <Link href="https://www.youtube.com/channel/UC3u9C_wdhIn81JGnrmMzWrA" passHref>
-                  <a target="_blank">
                     <YouTubeSvg className="nav__icon--youtube" width={25} height={25} />
-                  </a> 
                 </Link>
               </li>
             </ul>

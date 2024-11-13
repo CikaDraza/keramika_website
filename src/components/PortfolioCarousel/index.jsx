@@ -170,7 +170,7 @@ const handleTouchMove = useCallback((event) => {
               <div className="carousel-card">
                 <h3 className="card__header">{img.header}</h3>
                 <div data-id={index} className="card__action">
-                  <Link href={`/radovi`}><a>detaljnije...<span><ArrowLeft width={20} height={20} fill="#1D3557" /></span></a></Link>
+                  <Link href={`/radovi`} passHref>detaljnije...<span><ArrowLeft width={20} height={20} fill="#1D3557" /></span></Link>
                 </div>
               </div>
           </div>

@@ -365,7 +365,7 @@ export default function ContactForm({ match }) {
           <UlComponent>
             <li>
               <StrongComponent>Adresa</StrongComponent><br/>
-              Stevana Sremca 89k, Sremska Mitrovica 22000, Srbija
+              Miloša Obilica 55, Sremska Mitrovica 22000, Srbija
             </li>
             <li>
               <StrongComponent>Telefon</StrongComponent><br/>
@@ -374,7 +374,7 @@ export default function ContactForm({ match }) {
             </li>
             <li>
               <StrongComponent>Email</StrongComponent><br/>
-              info@keramicar-lale.com
+              info@keramicar-lale.online
             </li>
             <li>
               <StrongComponent>Radno vreme</StrongComponent><br/>

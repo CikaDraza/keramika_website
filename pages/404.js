@@ -23,7 +23,7 @@ export default function Error() {
         </h2>
         <div className="buttons">
           <button className="buttons__action action--blue">
-            <Link href="/">Nazad na sigurno</Link>
+            <Link href="/" passHref>Nazad na sigurno</Link>
           </button>
         </div>
       </div>

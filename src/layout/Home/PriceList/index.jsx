@@ -110,7 +110,7 @@ export default function PriceList(props) {
           </div>
           </div>
           <div className="price__action">
-            <Link href="/cene"><a>{priceListProps.actionBtn}</a></Link>
+            <Link href="/cene" passHref>{priceListProps.actionBtn}</Link>
           </div>
       </div>      
     </section>

@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import ReactDOM from "react-dom";
-import Image from 'next/dist/client/image';
 
 export default function VideoModal({ open, close, data, match }) {
   const [isLoadedBrowser, setIsLoadedBrowser] = useState(false);
